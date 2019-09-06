@@ -22,11 +22,12 @@ class MinimumLength extends Component {
                 <h4>Minimum Length</h4>
                 <form>
                     <input onChange={ this.handleChange } value={ input } className="form-control" />
-                    <label className="mt-2">
-                        {
-                            input.length >= 0 && input.length < length ? `${length - input.length} characters required` : ""
-                        }
-                    </label>
+                    {
+                        !(input.length >= 0 && input.length < length) ? null :
+                        <label className="mt-2">
+                            { `${length - input.length} characters required` }
+                        </label>
+                    }
                 </form>
             </div>
         )

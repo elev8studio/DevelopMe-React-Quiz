@@ -11,7 +11,7 @@ class CountBy extends Component {
         let { step } = this.props;
         let { count } = this.state;
         this.setState({
-            count: count + +step
+            count: count + step
         })
     }
 

@@ -23,14 +23,13 @@ const App = () => {
 				) } />
 				<Route exact path="/evenclicks" component={ EvenClicks } />
 				<Route exact path="/count-by/:step" render={ ({ match }) => (
-					<CountBy step={ match.params.step } />
+					<CountBy step={ +match.params.step } />
 				) } />
 				<Route exact path="/hide-me" render={ () => (
 					<HideMe>Blah blah blah</HideMe>
 				) } />
-				{/* <HideMe>Blah blah blah</HideMe> */}
 				<Route exact path="/minimum/:length" render={ ({ match }) => (
-					<MinimumLength length={ match.params.length} />
+					<MinimumLength length={ +match.params.length} />
 				) } />
 			</Fragment>
 		</Router>

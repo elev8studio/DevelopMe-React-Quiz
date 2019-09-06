@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Form extends Component {
     constructor(props) {
         super(props);
-        this.state = { title: "", text: "", post: "",  saved: false }
+        this.state = { title: "", text: "", saved: false }
         this.handleTitle = this.handleTitle.bind(this);
         this.handleText = this.handleText.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,9 +21,9 @@ class Form extends Component {
         e.preventDefault();
         let { handleUpdate } = this.props;
         let { title, text } = this.state;
-        handleUpdate({ title: title, text: text, saved: true });
+        handleUpdate({ title: title, text: text });
+        this.setState({ title: "", text: "", saved: true });
         setTimeout(() => this.setState({ saved: false }), 2000);
-        this.setState({ title: "", text: "", saved: false });
     }
 
     render() {

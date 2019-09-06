@@ -6,7 +6,7 @@ class Posts extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            posts: ""
+            posts: []
          };
         this.handleUpdate = this.handleUpdate.bind(this);
     }
@@ -24,7 +24,7 @@ class Posts extends Component {
             <> 
                 <h1 className="mb-4">Posts</h1>
                 {
-                    posts === "" ? <p> No posts</p> : 
+                    posts.length === 0 ? <p> No posts</p> : 
                     (
                         <ul className="list-group">
                             {
