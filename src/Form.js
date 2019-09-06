@@ -19,16 +19,11 @@ class Form extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        let { handleUpdate } = this.props;
         let { title, text } = this.state;
-        if (title === "" || text === "") {
-            return false;
-        } else {
-            let { handleUpdate } = this.props;
-            let { title, text } = this.state;
-            handleUpdate({ title: title, text: text, saved: true });
-            setTimeout(() => this.setState({ saved: false }), 2000);
-            this.setState({ title: "", text: "", saved: false });
-        }
+        handleUpdate({ title: title, text: text, saved: true });
+        setTimeout(() => this.setState({ saved: false }), 2000);
+        this.setState({ title: "", text: "", saved: false });
     }
 
     render() {
@@ -40,10 +35,10 @@ class Form extends Component {
                 <form onSubmit={ this.handleSubmit } className="my-3">
 
                     <label className="help-block">Title</label>
-                    <input onChange={ this.handleTitle } className="form-control" value={ title } />
+                    <input onChange={ this.handleTitle } className="form-control" value={ title } required />
 
                     <label className="help-block mt-3">Text</label>
-                    <input onChange={ this.handleText } className="form-control" value={ text } />
+                    <input onChange={ this.handleText } className="form-control" value={ text } required />
 
                     <button className="btn btn-primary mt-3">Submit</button>
 

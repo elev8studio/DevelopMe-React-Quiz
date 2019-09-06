@@ -19,7 +19,7 @@ class HideMe extends Component {
         return (
             <div className="jumbotron">
                 <h4>Hide Me</h4>
-                <p onClick={ this.handleClick } className={ !visible ? "d-none" : "d-block" }>{ children }</p>
+                <p onClick={ this.handleClick } className={ !visible ? "d-none" : null }>{ children }</p>
             </div>
         )
     }
