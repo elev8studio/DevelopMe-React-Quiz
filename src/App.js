@@ -11,11 +11,13 @@ import EvenClicks from "./EvenClicks";
 import CountBy from "./CountBy";
 import HideMe from "./HideMe";
 import MinimumLength from "./MinimumLength";
+import Posts from "./Posts";
 
 const App = () => {
 	return (
 		<Router>
 			<Fragment>
+				<Route exact path="/" component={ Posts } />
 				<Route exact path="/multiplier/:x/:y" render={ ({ match }) => (
 					<Multiplier x={ match.params.x } y={ match.params.y } />
 				) } />
