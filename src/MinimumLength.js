@@ -16,7 +16,7 @@ class MinimumLength extends Component {
 
     render() {
         let { length } = this.props;
-        let { input, message } = this.state;
+        let { input } = this.state;
         return (
             <div className="jumbotron">
                 <h4>Minimum Length</h4>
