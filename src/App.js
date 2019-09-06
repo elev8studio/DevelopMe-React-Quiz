@@ -23,8 +23,13 @@ const App = () => {
 				<Route exact path="/count-by/:step" render={ ({ match }) => (
 					<CountBy step={ match.params.step } />
 				) } />
-				<HideMe>Blah blah blah</HideMe>
-				<MinimumLength length={ 30 } />
+				<Route exact path="/hide-me" render={ () => (
+					<HideMe>Blah blah blah</HideMe>
+				) } />
+				{/* <HideMe>Blah blah blah</HideMe> */}
+				<Route exact path="/minimum/:length" render={ ({ match }) => (
+					<MinimumLength length={ match.params.length} />
+				) } />
 			</Fragment>
 		</Router>
 	);
